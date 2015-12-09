@@ -13,14 +13,14 @@ $ cf marketplace
 Getting services from marketplace in org testing / space testing as me...
 OK
 
-service       plans     description
-p-cassandra   default   Cassandra service
+service       plans          description
+p-cassandra   multi-tenant   Cassandra service powered by DataStax Enterprise
 ```
 
 Our service is called `p-cassandra`.  To create an instance of this service, use:
 
 ```
-$ cf create-service p-cassandra default cassandra
+$ cf create-service p-cassandra multi-tenant cassandra
 ```
 
 #### Push the Example Application
