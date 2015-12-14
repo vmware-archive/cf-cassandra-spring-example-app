@@ -26,6 +26,14 @@ $ cf create-service p-cassandra multi-tenant cassandra
 #### Push the Example Application
 
 First, you need to build the app.
+Ensure that you have got JDK v8 installed and your `JAVA_HOME` path correctly set.
+
+On OSX you can set your `JAVA_HOME` path as follows
+```bash
+$ export JAVA_HOME=`/usr/libexec/java_home`
+$ echo $JAVA_HOME
+/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home
+```
 
 ```bash
 brew install maven
@@ -33,7 +41,7 @@ mvn package
 ```
 
 The example application comes with a Cloud Foundry `manifest.yml` file, which provides all of the defaults necessary for an easy `cf push`.
-
+The manifest references the offline java buildpack, which is commonly installed on the most recent Cloud Foundry installations 
 ```
 $ cf push
 Using manifest file cassandra-example-app/manifest.yml
