@@ -1,7 +1,0 @@
----
-applications:
-  - name: cassandra-example-app
-    buildpack: java_buildpack_offline
-    path: target/cassandra-example-app-0.0.1-SNAPSHOT.jar
-    services:
-      - cassandra
