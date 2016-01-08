@@ -14,6 +14,9 @@ public class CassandraConnectionFactory  {
 
     public CassandraConnectionFactory() {
         cloudConfig = new CloudCassandraPropertiesManager();
+    }
+
+    private void setActiveProperty() {
         if (cloudConfig.hasCloudProperties()) {
             activeProperties = cloudConfig;
         } else {
@@ -22,6 +25,7 @@ public class CassandraConnectionFactory  {
     }
 
     public CassandraProperties getProperties() {
+        if (activeProperties == null) setActiveProperty();
         return activeProperties;
     }
 
