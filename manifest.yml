@@ -1,0 +1,7 @@
+---
+applications:
+  - name: cassandra-example-app
+    buildpack: java_buildpack
+    path: build/libs/cassandra-example-app-1.0-SNAPSHOT.jar
+    services:
+      - cassandra-example-app
