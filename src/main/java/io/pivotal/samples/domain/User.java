@@ -1,4 +1,4 @@
-package io.pivotal.samples;
+package io.pivotal.samples.domain;
 
 /**
  * Created by pivotal on 07/01/2016.

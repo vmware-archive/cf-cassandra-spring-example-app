@@ -4,6 +4,23 @@ This simple application illustrates the use of the Pivotal Cassandra data servic
 
 ## Installation
 
+### Running locally
+
+To run the application locally, you need first to create a keyspace in your cassandra. 
+
+```
+$> cqlsh
+Connected to Test Cluster at 127.0.0.1:9042.
+[cqlsh 5.0.1 | Cassandra 2.2.3 | CQL spec 3.3.1 | Native protocol v4]
+Use HELP for help.
+
+cqlsh> CREATE KEYSPACE example WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+```
+
+The default keyspace name is `example`. You can change it in the application.properties file.
+
+### Running on Cloud Foundry
+
 #### Create a Cassandra service instance
 
 Find your Cassandra service via `cf marketplace`.
@@ -50,7 +67,7 @@ $ cf push
 
 ## Usage
 
-You can now read, write and delete records by GETting, POSTing and DELETEing to `/table/key`.  Be sure to create the table, first.  In the example below, we create a table named `entries`, add a key/value pair named `foo` with a value of `bar`, and retrieve the value back from `foo`.
+You can now read, write and delete "users" by GETting, POSTing and DELETEing to `/users`.
 
 ```
 $ curl -X GET  http://cassandra-example-app.example.com/users

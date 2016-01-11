@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 public class CloudCassandraPropertiesManager extends CassandraProperties {
-    private static final String VCAP_SERVICES ="VCAP_SERVICES";
+    private static final String VCAP_SERVICES = "VCAP_SERVICES";
 
     public CloudCassandraPropertiesManager() {
         super();
